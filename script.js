@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function addTask() {
     const taskText = taskInput.value.trim();
 
-    // تحقق مما إذا كان النص فارغًا، إذا كان فارغًا، قم بإنهاء الدالة
     if (taskText === '') {
       alert('Please enter a task');
       return;
@@ -20,9 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const removeBtn = document.createElement('button');
     removeBtn.textContent = 'Remove';
-    removeBtn.className = 'remove-btn'; // بدون استخدام classList.add
+    removeBtn.className = 'remove-btn';
 
-    // تعيين حدث onclick لإزالة عنصر LI عند الضغط على الزر
     removeBtn.onclick = () => {
       taskList.removeChild(li);
     };
@@ -45,3 +43,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
