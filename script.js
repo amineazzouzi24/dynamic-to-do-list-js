@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    //DOM
     const addButton = document.getElementById('add-task-btn');
     const taskInput = document.getElementById('task-input');
     const taskList = document.getElementById('task-list');
+
 
     function addTask() {
         const taskText = taskInput.value.trim();
@@ -18,10 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
         removeBtn.textContent = 'Remove';
         removeBtn.className = 'remove-btn';
 
-        // Use addEventListener instead of onclick
-        removeBtn.addEventListener('click', () => {
+        removeBtn.onclick = () => {
             taskList.removeChild(li);
-        });
+        };
 
         li.appendChild(removeBtn);
         taskList.appendChild(li);
@@ -31,10 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     addButton.addEventListener('click', addTask);
 
-    // Use 'keydown' instead of 'keypress'
-    taskInput.addEventListener('keydown', (event) => {
+    taskInput.addEventListener('keypress', (event) => {
         if (event.key === 'Enter') {
             addTask();
         }
     });
+
 });
